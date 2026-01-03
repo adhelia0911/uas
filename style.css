@@ -1,0 +1,467 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* HEADER */
+header {
+    background-color: #ff69b4;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+/* ================= HOME SECTION ================= */
+.home-section {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.home-section h2 {
+    font-size: 32px;
+    color: #ff69b4;
+    margin-bottom: 15px;
+}
+
+.home-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    text-align: center;
+}
+
+/* ================= HOME MOBILE ================= */
+@media (max-width: 768px) {
+    .home-section h2 {
+        font-size: 24px;
+    }
+
+    .home-section p {
+        font-size: 14px;
+    }
+}
+
+
+/* NAV */
+nav {
+    background-color: #ffb6c1;
+    text-align: center;
+    padding: 12px;
+}
+
+nav a {
+    color: #333;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+}
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+.content {
+    display: none;
+    animation: fade 0.4s ease;
+}
+
+.content.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/* ================= PROFILE SECTION ================= */
+.profile-section {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.profile-section h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #ff69b4;
+    margin-bottom: 30px;
+}
+
+/* CONTAINER */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+/* FOTO */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid #ff9ecb;
+    object-fit: cover;
+}
+
+/* TEKS */
+.profile-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.profile-text b {
+    color: #ff69b4;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .profile-text p {
+        font-size: 14px;
+    }
+}
+
+/* KARYA */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ================= MEDIA SECTION ================= */
+#media h3 {
+    margin-top: 30px;
+    color: #ff69b4;
+}/* ================= MEDIA 6 KOLOM ================= */
+#media .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 KOLOM */
+    gap: 8px;
+}
+
+/* FOTO */
+.media-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;   /* portrait */
+    max-height: 100%;     /* LEBIH KECIL */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* VIDEO */
+#media video {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    background: black;
+}
+
+/* AUDIO */
+#media audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* DOKUMEN */
+.dokumen-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.dokumen-list li {
+    margin-bottom: 10px;
+}
+
+.dokumen-list a {
+    display: inline-block;
+    background: white;
+    color: #ff69b4;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.dokumen-list a:hover {
+    background: #ff69b4;
+    color: white;
+}@media (max-width: 1024px) {
+    #media .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #media .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .media-img,
+    #media video {
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    #media .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .media-img,
+    #media video {
+        max-height: 110px;
+    }
+}
+
+
+/* KONTAK */
+.kontak-section {
+    padding: 50px 10%;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.kontak-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info-kontak,
+.form-kontak {
+    flex: 1;
+    background: #ff69b4;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.info-box span {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.form-kontak input,
+.form-kontak textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+}
+
+.form-kontak button {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    color: #ff69b4;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background-color: #ff69b4;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+/* ================= MOBILE RESPONSIVE EXTRA ================= */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px 8px;
+        font-size: 14px;
+    }
+
+    /* MAIN */
+    main {
+        padding: 15px;
+    }
+
+    /* PROFILE */
+    .profile-img {
+        width: 140px;
+        height: 140px;
+        margin: auto;
+    }
+
+    .profile-text p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* KARYA */
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .card img {
+        height: 140px;
+    }
+
+    .card h3 {
+        font-size: 15px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    /* MEDIA */
+    #media h3 {
+        text-align: center;
+    }
+
+    .media-img,
+    #media video {
+        max-height: 110px;
+        border-radius: 6px;
+    }
+
+    audio {
+        width: 100%;
+    }
+
+    /* KONTAK */
+    .kontak-section {
+        padding: 30px 15px;
+    }
+
+    .info-kontak,
+    .form-kontak {
+        padding: 20px;
+    }
+
+    .info-box {
+        justify-content: center;
+        text-align: left;
+    }
+
+    .info-box span {
+        font-size: 20px;
+    }
+}
+
+/* ================= EXTRA SMALL MOBILE ================= */
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    /* KARYA */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* MEDIA */
+    #media .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .media-img,
+    #media video {
+        max-height: 95px;
+    }
+
+    /* KONTAK */
+    .info-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-box span {
+        margin-bottom: 5px;
+    }
+}
